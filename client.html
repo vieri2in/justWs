@@ -1,0 +1,12 @@
+<script>
+  let ws = new WebSocket("ws://localhost:9000");
+  console.log(ws);
+  ws.onopen = (event) => {
+    console.log(event);
+    ws.send("Happy to connect to the server");
+  };
+  ws.onmessage = (message) => {
+    // console.log(message);
+    console.log(message.data);
+  };
+</script>
